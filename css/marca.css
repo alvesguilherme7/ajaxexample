@@ -1,0 +1,9 @@
+.marca {
+    text-align: center;
+    padding: 5px;
+}
+
+.marca > img {
+    width: 15%;
+}
+

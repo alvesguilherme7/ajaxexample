@@ -1,0 +1,18 @@
+.assuntos {
+    position: absolute;
+    margin-left: 76%;
+    margin-right: 0;
+    width: 24%;
+    text-align: center;
+  }
+
+.assuntos li{
+    text-align: left;
+    color: #056105;
+}
+
+.assuntos li:hover{
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+}

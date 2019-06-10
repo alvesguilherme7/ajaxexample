@@ -1,0 +1,88 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aconteceu Notícias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <div class="load">Carregando...</div>
+    <header>
+        <!--utilidade-->
+        <div class="utilidade">
+            <span class="hora"></span>
+            <span class="temperatura">00:06 </span>
+            <span class="dolar">00:06 </span>
+            <span class="euro">00:06 </span>
+            <span class="data"> 11 de abril de 2019 </span>
+        </div>
+
+        <!--marca-->
+        <div class="marca">
+            <img src="./logo.jpg" alt="">
+        </div>
+
+        <!--destaque = carousel by https://speckyboy.com/open-source-carousel-sliders-css/ -->
+        <div class="destaque">
+            <div class="slider">
+                <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav" />
+                <input type="radio" name="slider" title="slide2" class="slider__nav" />
+                <input type="radio" name="slider" title="slide3" class="slider__nav" />
+                <input type="radio" name="slider" title="slide4" class="slider__nav" />
+                <div class="slider__inner"></div>
+            </div>
+        </div>
+        
+
+        <!--pesquisa-->
+        <div class="pesquisa">
+            <input id="busca" type="text" placeholder=" O que você procura ?" autofocus>
+            <button id="vai">Vai !!!</button>
+        </div>
+
+    </header>
+
+    <section>
+        <!--assuntos-->
+        <div class="assuntos">
+            <h3>TOP Assuntos</h3>
+            <ol>
+                <li onclick="buscarConteudo(null,'science')" >Ciência</li>
+                <li onclick="buscarConteudo(null,'entertainment')" >Entretenimento</li>
+                <li onclick="buscarConteudo(null,'sports')" >Esportes</li>
+                <li onclick="buscarConteudo(null,'general')" >Geral</li>
+                <li onclick="buscarConteudo(null,'business')" >Negócios</li>
+                <li onclick="buscarConteudo(null,'technology')" >Tecnologia</li>
+            </ol>
+        </div>
+
+    </section>
+
+    <article list-noticias></article>
+
+    <footer>
+        <!--complementar-->
+        <div class="complementar">
+            <a id="mostrarMais" href="#mostrarMais">Mostrar Mais</a>
+        </div>
+
+        <!--rodape-->
+        <div class="rodape">
+            Rede Norte de Telecomunicações S. A.
+            <br>
+            Todos os Direitos Reservados.
+            <br>
+            Notícias por <a href="https://newsapi.org">newsapi.org</a>
+        </div>
+
+    </footer>
+
+</body>
+<script src="./js/main.js"></script>
+
+</html>

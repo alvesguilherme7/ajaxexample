@@ -1,0 +1,32 @@
+.noticias {
+  display: flex;
+  background-color: silver;
+  width: 76%;
+  height: auto;
+}
+
+.noticias > .noticia {
+  background-color: white;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  padding: 0.4%;
+  width: 48%;
+  text-align: center;
+}
+
+.noticias > .noticia img {
+  width: 80%;
+  height: 5cm;
+  border: 1px solid black;
+}
+
+.noticias > .noticia h3 {
+  text-align: center;
+  min-height: 3cm;
+}
+
+.noticias > .noticia p {
+  margin-top: 2%;
+  text-align: justify;
+}

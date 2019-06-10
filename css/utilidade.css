@@ -1,0 +1,39 @@
+.utilidade {
+    padding-top: 3px;
+    text-align: center;
+}
+
+.utilidade > span{
+    margin-left: 3%;
+}
+
+.utilidade > .hora::before{
+    content: 'Hora: ';
+    font-weight: 700;
+    color: #056105;
+}
+
+.utilidade > .temperatura::before{
+    content: 'Temperatura: ';
+    font-weight: 700;
+    color: #056105;
+}
+
+.utilidade > .dolar::before{
+    content: 'Dolar $: ';
+    font-weight: 700;
+    color: #056105;
+}
+
+
+.utilidade > .euro::before{
+    content: 'Euro $: ';
+    font-weight: 700;
+    color: #056105;
+}
+
+.utilidade > .data::before{
+    content: ' Dia ';
+    font-weight: 700;
+    color: #056105;
+}
