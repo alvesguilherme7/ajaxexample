@@ -1,0 +1,197 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "API Contagem de Bens",
+    "description" : "API de comunicação entre o SankhyaOm e aplicação mobile.",
+    "contact" : {
+      "name" : "Sankhya Gestão de Negócios - Unidade BH/Nova Lima",
+      "url" : "www.sankhya.com.br"
+    }
+  },
+  "paths" : {
+    "/contagens" : {
+      "get" : {
+        "summary" : "Buscar contagens",
+        "tags" : [ "Contagem de Bens" ],
+        "description" : "Buscar solicitações de contagens disponíveis.",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/contagem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contagens/recebidas" : {
+      "post" : {
+        "summary" : "Marcar contagem como recebida",
+        "tags" : [ "Contagem de Bens" ],
+        "description" : "Marcar a contagem como recebida para dar feedback ao usuário do SankhyaOm",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/recebidas"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/contagens/{id}" : {
+      "put" : {
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "description" : "Número único da solicitação de contagem",
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "summary" : "Enviar/Atualizar contagem de bens",
+        "tags" : [ "Contagem de Bens" ],
+        "description" : "Enviar contagem de bens",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/components/schemas/bem"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "contagem" : {
+        "type" : "object",
+        "properties" : {
+          "nuContagem" : {
+            "type" : "integer"
+          },
+          "codSolicitante" : {
+            "type" : "integer"
+          },
+          "nomeSolicitante" : {
+            "type" : "string"
+          },
+          "codDestino" : {
+            "type" : "integer"
+          },
+          "nomeDestino" : {
+            "type" : "string"
+          },
+          "codStatus" : {
+            "type" : "integer"
+          },
+          "nomeStatus" : {
+            "type" : "string"
+          },
+          "dataHoraSolicitacao" : {
+            "type" : "integer"
+          },
+          "dataHoraUltimaResposta" : {
+            "type" : "integer"
+          },
+          "verificada" : {
+            "type" : "integer"
+          },
+          "bens" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/bem"
+            }
+          }
+        }
+      },
+      "bem" : {
+        "type" : "object",
+        "properties" : {
+          "codBem" : {
+            "type" : "string"
+          },
+          "codProdutoBem" : {
+            "type" : "integer"
+          },
+          "nomeProdutoBem" : {
+            "type" : "string"
+          },
+          "codEmpresa" : {
+            "type" : "integer"
+          },
+          "nomeEmpresa" : {
+            "type" : "string"
+          },
+          "codCenCus" : {
+            "type" : "integer"
+          },
+          "nomeCenCus" : {
+            "type" : "string"
+          },
+          "codLotacao" : {
+            "type" : "integer"
+          },
+          "nomeLotacao" : {
+            "type" : "string"
+          },
+          "codLocalizacao" : {
+            "type" : "integer"
+          },
+          "nomeLocalizacao" : {
+            "type" : "string"
+          },
+          "codEnviado" : {
+            "type" : "integer"
+          },
+          "nomeEnviado" : {
+            "type" : "string"
+          },
+          "codLocalizado" : {
+            "type" : "integer"
+          },
+          "nomeLocalizado" : {
+            "type" : "string"
+          }
+        }
+      },
+      "recebidas" : {
+        "type" : "object",
+        "properties" : {
+          "nuContagens" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/policarto/ContamgemBens/1.0.0"
+  } ]
+}
